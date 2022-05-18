@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<title>Spring Boot AJAX jQuery CRUD</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<!-- jQuery Modal -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+	<link href="css/estilosV1.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/personas.js"></script>
+</head>
+<body>
+
+	<h2>Spring Boot AJAX jQuery CRUD</h2>
+	
+	<p><a class='btn' href="#add" rel="modal:open">Agregar Persona</a></p>
+
+	<table border="1" cellspacing="0" cellpadding="5">
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Email</th>
+			<th>Telefono</th>						
+			<th>Actions</th>
+		</tr>
+	</table>
+	
+	<form id="add" action="#" class="add_form modal" style="display:none;">
+		<div id='msg'/>
+		<h3>Datos de la nueva Persona</h3>
+		<p>
+			<label>Nombre</label>
+			<input type="text" id="nombre" name="nombre">
+		</p>
+		<p>
+			<label>Apellido</label>
+			<input type="text" id="apellido" name="apellido">
+		</p>
+		<p>
+			<label>Email</label>
+			<input type="text" id="email" name="email">
+		</p>
+		<p>
+			<label>Telefono</label>
+			<input type="text" id="telefono" name="telefono">
+		</p>
+		<p>
+			<input type="submit" id="addNew" value="Guardar">
+		</p>
+	</form>
+
+</body>
+</html>
