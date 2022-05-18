@@ -16,12 +16,20 @@ $(document).ready(function() {
 	
 	$(document).delegate('#addNew', 'click', function(event) {
 		event.preventDefault();
-		
+
 		var nombre = $('#nombre').val();
 		var apellido = $('#apellido').val();
 		var email = $('#email').val();
 		var telefono = $('#telefono').val();
 		
+		if(nombre=='' && apellido == ''){
+			alert('Debe ingresar un nombre o un apellido');
+			return;
+		}
+		if(telefono=='' && email == ''){
+			alert('Debe ingresar un telefono o un email');
+			return;
+		}
 		$.ajax({
 			type: "POST",
 			contentType: "application/json; charset=utf-8",
@@ -87,7 +95,16 @@ $(document).ready(function() {
 		var email = parent.children("td:nth-child(4)");
 		var telefono = parent.children("td:nth-child(5)");
 		var buttons = parent.children("td:nth-child(6)");
-		
+
+		if(nombre.children("input[type=text]").val()=='' && apellido.children("input[type=text]").val() == ''){
+			alert('Debe ingresar un nombre o un apellido');
+			return;
+		}
+		if(email.children("input[type=text]").val()=='' && telefono.children("input[type=text]").val() == ''){
+			alert('Debe ingresar un telefono o un email');
+			return;
+		}
+
 		$.ajax({
 			type: "PUT",
 			contentType: "application/json; charset=utf-8",
