@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$.getJSON('http://localhost:8080/personaList', function(json) {
+	$.getJSON('/personaList', function(json) {
 		var tr=[];
 		for (var i = 0; i < json.length; i++) {
 			tr.push('<tr>');
@@ -33,7 +33,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: "POST",
 			contentType: "application/json; charset=utf-8",
-			url: "http://localhost:8080/persona/save",
+			url: "/persona/save",
 			data: JSON.stringify({'nombre': nombre, 'apellido': apellido, 'email': email, 'telefono': telefono }),
 			cache: false,
 			success: function(result) {
@@ -52,7 +52,7 @@ $(document).ready(function() {
 			var parent = $(this).parent().parent();
 			$.ajax({
 				type: "DELETE",
-				url: "http://localhost:8080/persona/delete/" + id,
+				url: "/persona/delete/" + id,
 				cache: false,
 				success: function() {
 					parent.fadeOut('slow', function() {
@@ -108,7 +108,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: "PUT",
 			contentType: "application/json; charset=utf-8",
-			url: "http://localhost:8080/persona/update",
+			url: "/persona/update",
 			data: JSON.stringify({'id' : id.html(), 'nombre' : nombre.children("input[type=text]").val(), 'apellido' : apellido.children("input[type=text]").val(), 'email' : email.children("input[type=text]").val(), 'telefono' : telefono.children("input[type=text]").val()}),
 			cache: false,
 			success: function() {
